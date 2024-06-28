@@ -1,0 +1,22 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as *;
+
+.lineup{
+    background-color: $rosa;
+    h3, .day{
+        text-align: center;
+        color: $blanco;
+    }
+    .day{
+        font-size: 2.7rem;
+        text-transform: uppercase;
+    }
+}
+
+.scenery-container{
+    @include container;
+    @include tablets{
+        @include grid(2);
+    }
+
+}

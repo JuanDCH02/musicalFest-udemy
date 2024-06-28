@@ -1,0 +1,6 @@
+@use 'base' as *;
+@forward 'layout';
+
+h1{
+    font-family: $main_font;
+}

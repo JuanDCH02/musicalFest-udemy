@@ -1,0 +1,72 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as *;
+
+.gallery{
+    @include container;
+    &-images{
+        @include grid(1, 2rem);
+
+        @include phones{
+            @include grid(2, 2rem)
+        }
+        @include tablets{
+            @include grid(3, 2rem)
+        }
+        @include desktops{
+            @include grid(4, 2rem)
+        }
+
+        img {
+            height: 20rem;
+            object-fit: cover;
+        }  
+    }
+    
+}
+
+.modal{
+    position: fixed;
+    inset: 0;
+    background-color: rgba($negro, 0.65);
+    display: grid;
+    place-items: center;
+    animation: fadeIn ease-in .5s;
+
+    &.fade-out{
+        animation: fadeOut ease-in .5s;
+    }
+
+    img {
+    max-width: 100rem;
+    //max-height: 70rem;
+    }
+}
+
+.btn-close{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: $blanco;
+    border: none;
+    color: black;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
